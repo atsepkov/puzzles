@@ -1,0 +1,23 @@
+def memoize(f):
+    cache = {}
+    def wrapper(x):
+        if x not in cache:
+            cache[x] = f(x)
+        return cache[x]
+    return wrapper
+
+@memoize
+def fib(n):
+    if n == 0: return 1
+    if n == 1: return 2
+    return fib(n-1) + fib(n-2)
+
+i = 1
+total = 0
+while True:
+    value = fib(i)
+    if value > 4000000: break
+    if value % 2 == 0: total += value
+    i += 1
+
+print(total)
