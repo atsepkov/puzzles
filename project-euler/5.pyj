@@ -6,4 +6,4 @@ def gcd(a, b):
 def lcm(a, b):
     return a*b/gcd(a, b)
 
-print(range(1, 20+1).reduce(lcm))
+print([1 to 20].reduce(lcm))
