@@ -109,4 +109,5 @@ data = """
 # internal large-number conversions (because language designers intentially made
 # the language fool-proof - Ruby, Python) or are unaware that the language is
 # implicitly converting integers to floats anyway (matlab/JavaScript)
+
 print(Math.floor([float(i) for i in data].reduce(def(a, b): return a+b;) / 10e41))
