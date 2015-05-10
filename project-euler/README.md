@@ -17,3 +17,4 @@ The goal is to have these solutions execute efficiently, as per Project Euler gu
 	11.pyj: 4ms
 	12.pyj: 317ms
 	13.pyj: 1ms
+	14.pyj: 2279ms

@@ -1,0 +1,13 @@
+cache = {1:1}
+maxkey = 1
+maxval = 1
+def fill(n):
+    nonlocal maxkey, maxval
+    if n not in cache:
+        cache[n] = n % 2 ? fill(3*n +1) + 1 : fill(n/2) + 1
+        if cache[n] > maxval: maxkey, maxval = n, cache[n]
+    return cache[n]
+
+for j in range(1000000,0,-1):
+    fill(j)
+print(maxkey)
