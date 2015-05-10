@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm tmp.pyj
-for file in *.pyj; do
+rm -f tmp.pyj
+for file in `ls *.pyj | sort -n`; do
 	content=`cat $file`
 	printf "console.time('%s')\n%s\nconsole.timeEnd('%s')" "$file" "$content" "$file" > tmp.pyj
 	rapydscript tmp.pyj > tmp.js && node tmp.js
