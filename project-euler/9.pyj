@@ -1,0 +1,18 @@
+def isInt(n):
+    return n % 1 == 0
+
+def findTriplet(sum):
+    m = 0
+    for n in [0 to sum]:
+        delta = n**2 + 2*sum
+        m1 = (-n + Math.sqrt(delta)) / 2
+        m2 = (-n - Math.sqrt(delta)) / 2
+        if isInt(m1) and m1 > n:
+            m = m1
+        elif isInt(m2) and m2 > n:
+            m = m2
+        if m != 0:
+            return [2*m*n, m**2 - n**2, m**2 + n**2]
+
+a, b, c = findTriplet(1000)
+print(a * b * c)
