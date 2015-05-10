@@ -1,0 +1,12 @@
+def factor(n):
+    d = 0
+    for i in range(1, int(Math.sqrt(n))):
+        if n % i == 0: d += 1
+    return d * 2
+
+def triangle(n): return n * (n + 1) / 2
+
+i = 500 * 20
+while factor(triangle(i)) < 500:
+    i += 1
+print(triangle(i))
