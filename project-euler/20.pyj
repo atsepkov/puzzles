@@ -1,0 +1,9 @@
+digits = [0 for i in range(158)]
+digits[0] = 1
+for mult in [1 to 100]:
+    carry = 0
+    for i in range(len(digits)):
+        digits[i] = digits[i] * mult + carry
+        carry = int(digits[i] / 10)
+        digits[i] %= 10
+print(digits.reduce(def(x, y): return x + y;))
