@@ -1,0 +1,21 @@
+max = 1000/3 + 5
+a = [0 for i in range(max)]
+b = a[:]
+n = 1
+a[0] = 2
+limit = 1000
+
+while n < limit:
+    n = n + 1
+    for t in range(n / 3 + 4):
+        if a[t] * 2 + b[t] > 9:
+            b[t+1] = 1
+            a[t] = a[t] * 2 + b[t] - 10
+        else:
+            a[t] = a[t] * 2 + b[t]
+    for t in range(n / 3 + 5):
+        b[t] = 0
+sum = 0
+for t in range(max):
+    sum = sum + a[t]
+print(sum)
