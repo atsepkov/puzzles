@@ -1,6 +1,9 @@
 # Project Euler Challenges
 These are from projecteuler.net. I've solved many of these a long time ago in Python and Ruby. However, since the website's challenges provide a good way to learn algorithms and/or a new language, I decided to use them both to test out my language's brevity and as a shameless plug for my language: [RapydScript](https://github.com/atsepkov/RapydScript).
 
+# Purpose
+The solutions posted here attempt to both showcase the brevity/features of the language as well as make use of proper techniques for each problem. For example, if a problem asks one to do something with 2**1000, the problem probably expects the developer to be clever enough to figure out how to compute such number without storing it all in integer data type rather than foolishly performing the operation and bragging about the fact that his language of choice switches to big integers behind the scenes. With that said, in cases where a clever/elegant hack is possible, I may decide to use it.
+
 # Timing
 The goal is to have these solutions execute efficiently, as per Project Euler guidelines. I use node's internal timer to time and output these results via the `test` script:
 
