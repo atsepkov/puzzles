@@ -1,0 +1,13 @@
+fs = require('fs')
+data = fs.readFileSync('names.txt', 'utf8')
+
+# names are stored with quotes and commas, so we'll need to process those
+names = data.split(',').map(def(a): return a[1:-1];).sort()
+
+sum = 0
+for index, name in enumerate(names):
+    letters = 0
+    for j in range(len(name)):
+        letters += name.charCodeAt(j) - 64
+    sum += (index + 1) * letters
+print(sum)
