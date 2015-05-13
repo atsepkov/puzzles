@@ -1,0 +1,21 @@
+def d(n):
+    f = 1
+    for i in [2 to Math.sqrt(n)]:
+        if n % i == 0: f += i == n/i ? i : i + n/i
+    return f
+
+abundant = {}
+sum = 0
+for n in [1 to 28123]:
+    found = False
+    for an in abundant:
+        if n-an in abundant:
+            found = True
+            break
+    if not found:
+        sum += n
+
+    if d(n) > n:
+        abundant[n] = True
+
+print(sum)
