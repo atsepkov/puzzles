@@ -31,3 +31,4 @@ The goal is to have these solutions execute efficiently, as per Project Euler gu
 	22.pyj: 19ms
 	23.pyj: 5867ms
 	24.pyj: 1ms
+	25.pyj: 1ms
