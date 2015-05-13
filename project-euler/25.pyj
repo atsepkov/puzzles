@@ -1,4 +1,5 @@
 ceil = Math.ceil; sqrt = Math.sqrt
 log10 = def(x): return Math.log(x)/Math.LN10
 
+# https://en.wikipedia.org/wiki/Golden_ratio#Relationship_to_Fibonacci_sequence
 print(ceil((1000 - 1 + log10(sqrt(5))) / log10((1+sqrt(5))/2)))
