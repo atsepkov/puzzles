@@ -1,0 +1,16 @@
+maxlen = 0
+for n in [2 to 1000]:
+    remainder = 1
+    for i in range(n): remainder = (remainder*10) % n
+    nthRemainder = remainder
+    length = 0
+
+    do:
+        remainder = (remainder*10) % n
+        length += 1
+    .while remainder != nthRemainder
+
+    if length > maxlen:
+        d = n
+        maxlen = length
+print(d)
