@@ -1,0 +1,10 @@
+coins = [200,100,50,20,10,5,2,1]
+def combine(value, coinIndex):
+    sum = 0
+    if coinIndex == 7: return 1
+    for i in range(coinIndex, 8):
+        if value - coins[i] == 0: sum += 1
+        if value - coins[i] > 0: sum += combine(value-coins[i], i)
+    return sum
+
+print(combine(200, 0))
