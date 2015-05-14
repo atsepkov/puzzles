@@ -1,0 +1,22 @@
+product, record = 41, 40
+cache = {} # use of cache cuts the time by about half
+def isPrime(x):
+    if type(cache[x]) != "undefined": return cache[x]
+    if x<2: cache[x] = False
+    if x%2:
+        for i in range(3,int(Math.sqrt(x)),2):
+            if x%i == 0:
+                cache[x] = False
+                break
+    else: cache[x] = False
+    if type(cache[x]) == "undefined": cache[x] = True
+    return cache[x]
+
+for a in range(-999,1000):
+    for b in range(0,1000):
+        c = 0
+        while isPrime(c*c+a*c+b): c += 1
+        if c > record:
+            record = c
+            product = a*b
+print(product)
