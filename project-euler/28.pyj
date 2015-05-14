@@ -1,0 +1,9 @@
+# numbers are always odd, for a given n, the 4 corners are:
+#   n**2, n**2 - n + 1, n**2 - 2n + 2, n**2 - 3n + 3
+
+n = 1001
+sum = 1
+while n > 1:
+    sum += 4*n**2 - 6*n + 6
+    n -= 2
+print(sum)
