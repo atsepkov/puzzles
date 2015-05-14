@@ -1,0 +1,18 @@
+# if every digit is a 9, and there are n digits, sum is n*9**5
+#   9**5 = 59049, so upper bound will be at least 5 digits (so n >= 5)
+#   5*9**5 = 295245, so upper bound is 6 digits
+#   6*9**5 = 354294, 6 digits it is!
+
+# cache more than halves the time this problem uses
+cache = {}
+for d in [0 to 9]: cache[d] = d**5
+
+def test(number):
+    sum = 0
+    for n in number.toString(): sum += cache[n]
+    return sum
+
+valid = []
+for number in [2 to 354294]:
+    if number == test(number): valid.push(number)
+print(valid.reduce(def(x, y): return x + y;))

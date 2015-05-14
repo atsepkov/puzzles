@@ -1,5 +1,5 @@
 product, record = 41, 40
-cache = {} # use of cache cuts the time by about half
+cache = {}
 def isPrime(x):
     if type(cache[x]) != "undefined": return cache[x]
     if x<2: cache[x] = False
