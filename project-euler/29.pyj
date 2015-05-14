@@ -1,0 +1,27 @@
+max = 100
+duplicate = [[False for j in range(max)] for i in range(max)]
+def power(a, b):
+    res = 1
+    for i in range(b): res *= a
+    return res
+
+for a in [2 to max]:
+    for b in [2 to max]:
+        c = power(a, b)
+        if c > max: break
+
+        # mark duplicates
+        for b1 in [2 to max]:
+            b2 = b * b1
+            for f1 in [1 til b]:
+                if b2 % f1 == 0:
+                    f2 = b2 / f1
+                    a1 = power(a, f1)
+                    if a1 <= max and f2 <= max: duplicate[a1-1][f2-1] = True
+
+# count uniques
+count = 0
+for a in [2 to max]:
+    for b in [2 to max]:
+        if not duplicate[a-1][b-1]: count += 1
+print(count)
