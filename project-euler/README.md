@@ -5,7 +5,7 @@ These are from projecteuler.net. I've solved many of these a long time ago in Py
 The solutions posted here attempt to both showcase the brevity/features of the language as well as make use of proper techniques for each problem. For example, if a problem asks one to do something with 2**1000, the problem probably expects the developer to be clever enough to figure out how to compute such number without storing it all in integer data type rather than foolishly performing the operation and bragging about the fact that his language of choice switches to big integers behind the scenes. With that said, in cases where a clever/elegant hack is possible, I may decide to use it.
 
 # Timing
-The goal is to have these solutions execute efficiently, as per Project Euler guidelines. I use node's internal timer to time and output these results via the `test` script:
+The goal is to have these solutions execute efficiently, as per Project Euler guidelines (the goal is to have everything execute under a minute - 60000ms). I use node's internal timer to time and output these results via the `test` script. The timings here should be compared to JavaScript since that's effectively what the final code runs in, comparing them to other dynamically-typed languages may fall in the same ballpark but don't be surprised to see variations of 200% or more.
 
 	1.pyj: 1ms
 	2.pyj: 76ms
@@ -38,3 +38,4 @@ The goal is to have these solutions execute efficiently, as per Project Euler gu
 	29.pyj: 3ms
 	30.pyj: 51ms
 	31.pyj: 2ms
+	32.pyj: 19ms

@@ -1,0 +1,26 @@
+# 100*10 = 1000: smallest product has to be 4 digits
+# 10000/999 = 10, 10000/99 = 101: largest product also has to be 4 digits
+
+def is1to9Pandigital(n):
+    for i in [2 to Math.sqrt(n)]:
+        if n % i == 0:
+            concatenated = n.toString() + i + (n/i)
+            if concatenated.length == 9 and isPandigital(concatenated): return True
+    return False
+
+def isPandigital(n):
+    seen = {'0': True}
+    for digit in n.toString():
+        if not seen[digit]:
+            seen[digit] = True
+        else:
+            return False
+    return True
+
+cache = {}
+for i in [1234 to 9876]:
+    # first check is a shortcut to avoid a more expensive second check
+    if isPandigital(i) and is1to9Pandigital(i):
+        cache[i] = True
+
+print([int(key) for key in cache].reduce(def(a, b): return a+b;))
