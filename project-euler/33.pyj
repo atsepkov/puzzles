@@ -1,0 +1,33 @@
+def isDigitCanceling(n, d):
+    nHash = {}
+    dHash = {}
+    cancelled = False
+    n.toString().split('').forEach(def(i): nHash[i] = True;)
+    d.toString().split('').forEach(def(i): dHash[i] = True;)
+    for key in nHash:
+        if key != '0' and dHash[key]:
+            del dHash[key]
+            del nHash[key]
+            cancelled = True
+    if cancelled and int(Object.keys(nHash)[0])/int(Object.keys(dHash)[0]) == n/d:
+        return True
+    return False
+
+def gcd(a, b):
+    while a != b:
+        if a > b: a = a - b
+        else: b = b - a
+    return a
+
+valid = [] # store valid fractions
+for n in [10 to 99]:
+    for d in [10 to 99]:
+        if n/d < 1 and isDigitCanceling(n, d): valid.push([n, d])
+
+nProduct = 1
+dProduct = 1
+for n, d in valid:
+    nProduct *= n
+    dProduct *= d
+factor = gcd(nProduct, dProduct)
+print(dProduct/factor)
