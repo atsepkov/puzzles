@@ -26,4 +26,4 @@ def primes(n):
 # NOTE: I was lazy and reused the sieve from problem 7
 # no need to fix it if it works
 list = primes(2000000)
-print(list.reduce(def(a, b): return a+b;))
+print(sum(list))
