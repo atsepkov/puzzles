@@ -1,0 +1,48 @@
+# primes algorithm reused from problem 10
+def primes(n):
+    '''
+    Generate primes using the sieve algorithm
+    (http://en.wikipedia.org/wiki/Sieve_of_eratosthenes)
+    '''
+    if n == 2:
+        return [2]
+    elif n < 2:
+        return []
+    s = range(3, n+1, 2)
+    mroot = n ** 0.5
+    half = ((n + 1) / 2) - 1
+    i = 0
+    m = 3
+    while m <= mroot:
+        if s[i]:
+            j = (m * m - 3) / 2
+            s[j] = 0
+            while j < half:
+                s[j] = 0
+                j += m
+        i = i+1
+        m = 2 * i + 3
+    return [2].concat([x for x in s if x])
+
+
+# store all primes into a dict for constant lookup time
+allPrimes = {n: True for n in primes(1e6)}
+
+def digits(n):
+    return n.toString().split('')
+
+def isCircularPrime(n):
+    if allPrimes[n]:
+        d = digits(n)
+        for i in range(d.length-1):
+            d.push(d.shift())
+            if not allPrimes[d.join('')]:
+                return False
+        return True
+    return False
+
+count = 0
+for i in Object.keys(allPrimes):
+    if isCircularPrime(i):
+        count += 1
+print(count)
