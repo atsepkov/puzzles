@@ -40,3 +40,11 @@ The goal is to have these solutions execute efficiently, as per Project Euler gu
 	31.pyj: 2ms
 	32.pyj: 19ms
 	33.pyj: 13ms
+	34.pyj: 2221ms
+
+# Testing
+To test that any of the above gives correct result and/or performs in the claimed time, use
+the following command:
+
+	rapydscript -x [n].pyj
+

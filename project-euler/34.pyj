@@ -1,0 +1,22 @@
+# factorial taken from #24
+def factorial(n):
+    f = 1
+    for i in [1 to n]: f *= i
+    return f
+
+# since we're only using the same 9 digits, pre-compute the cache
+f = [factorial(n) for n in [0 to 9]]
+
+def isCurious(n):
+    if n < 3: return False
+    return n.toString().split('').reduce(def(p,c): return p + f[c];, 0) == n
+
+# f[9] is the largest factorial we can get, it's safe to assume that f[9]*10 will
+# be the largest sum, since summation increases the total at slower rate than
+# adding a digit
+upperBound = f[9]*10
+
+total = 0
+for i in [1 to upperBound]:
+    if isCurious(i): total += i
+print(total)
