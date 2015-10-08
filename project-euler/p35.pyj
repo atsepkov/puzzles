@@ -1,0 +1,23 @@
+from p7 import primes
+
+# store all primes into a dict for constant lookup time
+allPrimes = {n: True for n in primes(1e6)}
+
+def digits(n):
+    return n.toString().split('')
+
+def isCircularPrime(n):
+    if allPrimes[n]:
+        d = digits(n)
+        for i in range(d.length-1):
+            d.push(d.shift())
+            if not allPrimes[d.join('')]:
+                return False
+        return True
+    return False
+
+count = 0
+for i in Object.keys(allPrimes):
+    if isCircularPrime(i):
+        count += 1
+print(count)

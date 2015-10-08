@@ -1,0 +1,6 @@
+from p7 import primes
+
+# NOTE: I was lazy and reused the sieve from problem 7
+# no need to fix it if it works
+list = primes(2000000)
+print(sum(list))

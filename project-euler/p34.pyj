@@ -1,8 +1,5 @@
-# factorial taken from #24
-def factorial(n):
-    f = 1
-    for i in [1 to n]: f *= i
-    return f
+from p24 import factorial
+
 
 # since we're only using the same 9 digits, pre-compute the cache
 f = [factorial(n) for n in [0 to 9]]

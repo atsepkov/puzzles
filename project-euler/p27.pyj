@@ -1,0 +1,15 @@
+from p7 import primes
+
+
+product, record = 41, 40
+maxVal = 79**2 + 79*1000 + 1000
+allPrimes = {n: True for n in primes(maxVal)}
+
+for a in range(-999,1000):
+    for b in range(0,1000):
+        c = 0
+        while allPrimes[c*c+a*c+b]: c += 1
+        if c > record:
+            record = c
+            product = a*b
+print(product)

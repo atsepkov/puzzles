@@ -1,5 +1,8 @@
 max = 100
 duplicate = [[False for j in range(max)] for i in range(max)]
+
+# normal JS power uses floating point and suffers from accuracy as a result
+# this version does not
 def power(a, b):
     res = 1
     for i in range(b): res *= a

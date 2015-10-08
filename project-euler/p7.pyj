@@ -1,4 +1,3 @@
-# primes algorithm reused from problem 10
 def primes(n):
     '''
     Generate primes using the sieve algorithm
@@ -25,24 +24,7 @@ def primes(n):
     return [2].concat([x for x in s if x])
 
 
-# store all primes into a dict for constant lookup time
-allPrimes = {n: True for n in primes(1e6)}
-
-def digits(n):
-    return n.toString().split('')
-
-def isCircularPrime(n):
-    if allPrimes[n]:
-        d = digits(n)
-        for i in range(d.length-1):
-            d.push(d.shift())
-            if not allPrimes[d.join('')]:
-                return False
-        return True
-    return False
-
-count = 0
-for i in Object.keys(allPrimes):
-    if isCircularPrime(i):
-        count += 1
-print(count)
+# I plan to reuse primes in later problems
+if __name__ == '__main__':
+    list = primes(200000) # generate a list of all primes below 2,00,000
+    print(list[10000])
