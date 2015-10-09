@@ -7,45 +7,46 @@ The solutions posted here attempt to both showcase the brevity/features of the l
 # Timing
 The goal is to have these solutions execute efficiently, as per Project Euler guidelines (the goal is to have everything execute under a minute - 60000ms). I use node's internal timer to time and output these results via the `test` script. The timings here should be compared to JavaScript since that's effectively what the final code runs in, comparing them to other dynamically-typed languages may fall in the same ballpark but don't be surprised to see variations of 200% or more.
 
-	1.pyj: 1ms
-	2.pyj: 76ms
-	3.pyj: 2ms
-	4.pyj: 5ms
-	5.pyj: 1ms
-	6.pyj: 1ms
-	7.pyj: 8ms
-	8.pyj: 1ms
-	9.pyj: 1ms
-	10.pyj: 123ms
-	11.pyj: 4ms
-	12.pyj: 317ms
-	13.pyj: 1ms
-	14.pyj: 2279ms
-	15.pyj: 1ms
-	16.pyj: 18ms
-	17.pyj: 2ms
-	18.pyj: 1ms
-	19.pyj: 4ms
-	20.pyj: 2ms
-	21.pyj: 8ms
-	22.pyj: 19ms
-	23.pyj: 5867ms
-	24.pyj: 1ms
-	25.pyj: 1ms
-	26.pyj: 6ms
-	27.pyj: 78ms
-	28.pyj: 1ms
-	29.pyj: 3ms
-	30.pyj: 51ms
-	31.pyj: 2ms
-	32.pyj: 19ms
-	33.pyj: 13ms
-	34.pyj: 2221ms
-	35.pyj: 138ms
+	p1.pyj: 1ms
+	p2.pyj: 76ms
+	p3.pyj: 2ms
+	p4.pyj: 5ms
+	p5.pyj: 1ms
+	p6.pyj: 1ms
+	p7.pyj: 8ms
+	p8.pyj: 1ms
+	p9.pyj: 1ms
+	p10.pyj: 123ms
+	p11.pyj: 4ms
+	p12.pyj: 317ms
+	p13.pyj: 1ms
+	p14.pyj: 2279ms
+	p15.pyj: 1ms
+	p16.pyj: 18ms
+	p17.pyj: 2ms
+	p18.pyj: 1ms
+	p19.pyj: 4ms
+	p20.pyj: 2ms
+	p21.pyj: 8ms
+	p22.pyj: 19ms
+	p23.pyj: 5867ms
+	p24.pyj: 1ms
+	p25.pyj: 1ms
+	p26.pyj: 6ms
+	p27.pyj: 78ms
+	p28.pyj: 1ms
+	p29.pyj: 3ms
+	p30.pyj: 51ms
+	p31.pyj: 2ms
+	p32.pyj: 19ms
+	p33.pyj: 13ms
+	p34.pyj: 2221ms
+	p35.pyj: 138ms
+	p36.pyj: 1287ms
 
 # Testing
 To test that any of the above gives correct result and/or performs in the claimed time, use
 the following command:
 
-	rapydscript -x [n].pyj
+	rapydscript -x p[n].pyj
 

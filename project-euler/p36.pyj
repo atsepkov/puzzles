@@ -1,0 +1,10 @@
+def is2BasePalindromatic(n):
+    base10 = n.toString()
+    if base10 != base10[::-1]: return False
+    base2 = n.toString(2)
+    return base2 == base2[::-1]
+
+sum = 0
+for i in [1 to 1e6]:
+    if is2BasePalindromatic(i): sum += i
+print(sum)

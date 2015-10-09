@@ -1,8 +1,16 @@
 #!/bin/bash
 
-rm -f tmp.pyj
-for file in `ls *.pyj | sort -n`; do
-	content=`cat $file`
-	printf "console.time('%s')\n%s\nconsole.timeEnd('%s')" "$file" "$content" "$file" > tmp.pyj
+compile_file() {
+	local content=`cat $1`
+	printf "console.time('%s')\n%s\nconsole.timeEnd('%s')" "$1" "$content" "$1" > tmp.pyj
 	rapydscript tmp.pyj > tmp.js && node tmp.js
-done
+}
+
+rm -f tmp.pyj
+if [[ -z $1 ]]; then
+	for file in `ls *.pyj | sort -n`; do
+		compile_file $file
+	done
+else
+	compile_file $1
+fi
