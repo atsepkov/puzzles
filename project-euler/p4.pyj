@@ -1,12 +1,12 @@
 n = 3
-palindorme, nextTotal = 0, 0
+palindrome, nextTotal = 0, 0
 for total in range(2*10**n-2, 2*10**(n-1)-1, -1):
     for i in range(10**n-1, Math.floor((total-1)/2), -1):
         potentialPalindrome = i*(total-i)
-        if palindorme < potentialPalindrome:
+        if palindrome < potentialPalindrome:
             str = potentialPalindrome.toString()
             if str == str[::-1]:
-                palindorme = potentialPalindrome
+                palindrome = potentialPalindrome
                 nextTotal = Math.max(nextTotal, 2*(total-i))
     if total <= nextTotal: break
-print(palindorme)
+print(palindrome)
