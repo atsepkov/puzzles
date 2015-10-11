@@ -3,6 +3,8 @@ from p7 import primes
 # I have no clue how high those 11 primes go, but let's pick a really high number and see what happens
 allPrimes = {n: True for n in primes(1e6)}
 
+# this method highlights the power JS/RS has which Python lacks, we're able to reference array.push/pop
+# operaitons as if they're entries in a dict, without having to manually map that dict
 def isTruncatable(n, method):
     if int(n) < 10: return True
     a = n.toString().split('')
