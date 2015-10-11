@@ -1,0 +1,24 @@
+from p7 import primes
+
+# I have no clue how high those 11 primes go, but let's pick a really high number and see what happens
+allPrimes = {n: True for n in primes(1e6)}
+
+def isTruncatable(n, method):
+    if int(n) < 10: return True
+    a = n.toString().split('')
+    a[method]()
+    a = a.join('')
+    if allPrimes[a] and isTruncatable(a, method):
+        return True
+    return False
+
+sum = 0
+count = 0
+for prime in Object.keys(allPrimes):
+    if prime <= 7: continue
+    if isTruncatable(prime, "pop") and isTruncatable(prime, "shift"):
+        sum += int(prime)
+        count += 1
+        if count > 10:
+            break
+print(sum)
