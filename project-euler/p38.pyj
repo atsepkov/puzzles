@@ -1,6 +1,18 @@
 from p32 import isPandigital
 
 
+# TODO: a more elegant solution to try is a recursive descent function:
+#   - we start with number 9 because we know first digit will not be lower
+#   - we use current string of numbers and a list of unused digits as input for our recursive function
+#   - we recurse into a child call for each digit in unused digits that is higher than the digit corresponding to current recursion depth in current maxVal
+#   - we return the highest of the numbers produced by this recursion
+#
+#   Advantages:
+#   - despite the high branching factor, the factor quickly drops as digits are used up
+#   - despite the high branching factor, the recursion depth is always 9
+#   - despite the high branching factor, the tree prunes itself very effectively (for 3rd digit, for example, we only have 1 branch (9 is used up, and nothing else is higher than 8))
+#   - we eliminate the loop which is the bottleneck of current approach, because we're no longer trying all numbers
+
 maxVal = 918273645 # we'll start with a given, no sense in looking at lower numbers
 for n in [1 to 1e6]: # the best time-saver would be if we could lower the upper bound
 
