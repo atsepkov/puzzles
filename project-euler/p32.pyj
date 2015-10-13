@@ -1,7 +1,7 @@
 # 100*10 = 1000: smallest product has to be 4 digits
 # 10000/999 = 10, 10000/99 = 101: largest product also has to be 4 digits
 
-def is1to9Pandigital(n):
+def isIdentity1to9Pandigital(n):
     for i in [2 to Math.sqrt(n)]:
         if n % i == 0:
             concatenated = n.toString() + i + (n/i)
@@ -17,10 +17,11 @@ def isPandigital(n):
             return False
     return True
 
-cache = {}
-for i in [1234 to 9876]:
-    # first check is a shortcut to avoid a more expensive second check
-    if isPandigital(i) and is1to9Pandigital(i):
-        cache[i] = True
+if __name__ == '__main__':
+    cache = {}
+    for i in [1234 to 9876]:
+        # first check is a shortcut to avoid a more expensive second check
+        if isPandigital(i) and isIdentity1to9Pandigital(i):
+            cache[i] = True
 
-print([int(key) for key in cache].reduce(def(a, b): return a+b;))
+    print(sum([int(key) for key in cache]))

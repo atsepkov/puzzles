@@ -1,0 +1,28 @@
+from p32 import isPandigital
+
+
+maxVal = 918273645 # we'll start with a given, no sense in looking at lower numbers
+for n in [1 to 1e4]: # the best time-saver would be if we could lower the upper bound
+
+    # save us a lot of time by ignoring smaller numbers
+    # NOTE: the proper way would be to compare the first digit, but instead we'll abuse JS
+    # way of comparing strings (per-character), by concatenating 9 we ensure that first sequence
+    # will never be less for number that begins the right way. This hack shaves us another 20%
+    # or so from runtime
+    if n.toString() + '9' < maxVal.toString() or not isPandigital(n): continue
+
+    concatenated = n.toString()
+    m = 2
+    while True:
+        p = m * n
+        if isPandigital(p):
+            concatenated += p
+            if isPandigital(concatenated) and concatenated.length == 9:
+                maxVal = max(maxVal, int(concatenated))
+                break # save this and continue
+            else:
+                m += 1
+        else:
+            break # try next number
+
+print(maxVal)
