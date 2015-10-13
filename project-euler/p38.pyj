@@ -2,7 +2,7 @@ from p32 import isPandigital
 
 
 maxVal = 918273645 # we'll start with a given, no sense in looking at lower numbers
-for n in [1 to 1e4]: # the best time-saver would be if we could lower the upper bound
+for n in [1 to 1e6]: # the best time-saver would be if we could lower the upper bound
 
     # save us a lot of time by ignoring smaller numbers
     # NOTE: the proper way would be to compare the first digit, but instead we'll abuse JS
