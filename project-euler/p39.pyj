@@ -1,0 +1,27 @@
+from p5 import gcd
+
+# we're asked for Pythagorean triples here, we can generate them via Euclid's formula: https://en.wikipedia.org/wiki/Pythagorean_triple
+# we'll generate primitive ones and scale them: a = m**2 - n**2, b = 2*m*n, c = m**2 + n**2
+def isPrimitive(m, n):
+    if (m-n)%2 and gcd(m, n) == 1: return True
+
+perimeters = {}
+# max p is 1000, so max c is < 500, so max m or n < sqrt(500-1) = 22
+for n in [1 to 22]:
+    for m in [n+1 to 22]:
+        if isPrimitive(m, n):
+            a = m**2 - n**2
+            b = 2*m*n
+            c = m**2 + n**2
+            k = 0
+            do:
+                k += 1
+                p = k*a + k*b + k*c
+                if p < 1000:
+                    perimeters[p] = perimeters[p] ? perimeters[p] + 1 : 1
+            .while p <= 1000
+
+# now extract max
+print(Object.keys(perimeters).reduce(def(max, key):
+    return max == undefined or perimeters[key] > perimeters[max] ? int(key) : max
+))
