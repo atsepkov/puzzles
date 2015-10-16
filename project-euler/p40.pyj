@@ -1,0 +1,27 @@
+# 9 1 digit numbers
+# then 90 2 digit numbers
+# then 900 3 digit numbers
+# ...
+# this is a visual "modulo" problem
+
+
+counts = {n+1: 9*10**n for n in range(5)}
+def getDigit(n):
+    n-=1            # indexes start with 0, we need to start with 1
+    digitGroup = 1  # how many digits per number in this group
+    offset = 0      # offset in numbers (not digits)
+    while n > counts[digitGroup] * digitGroup:
+        n -= counts[digitGroup] * digitGroup
+        offset += counts[digitGroup]
+        digitGroup += 1
+    numberIndex = int(n/digitGroup)
+    digitIndex = n % digitGroup
+    number = numberIndex + offset + 1
+    return number.toString()[digitIndex]
+
+# product seems to come up often, let's abstract it
+def product(array):
+    return array.reduce(def(product, m): return product * m;, 1)
+
+if __name__ == "__main__":
+    print(product([getDigit(10**zeroes) for zeroes in range(7)]))
