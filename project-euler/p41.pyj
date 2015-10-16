@@ -1,0 +1,21 @@
+from p7 import primes
+
+
+def isNPandigital(n):
+    seen = {'0': True}
+    nString = n.toString()
+    for digit in nString:
+        if digit > nString.length: # slight optimization
+            return False
+        if not seen[digit]:
+            seen[digit] = True
+        else:
+            return False
+    return True
+
+maxPrime = 2143
+primeList = primes(1e7) # FIXME: I happened to pick a number high enough to work and low enough to not run out of memory yet
+for prime in primeList:
+    if isNPandigital(prime): maxPrime = prime
+
+print(maxPrime)
