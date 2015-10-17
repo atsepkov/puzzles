@@ -49,6 +49,7 @@ The goal is to have these solutions execute efficiently, as per Project Euler gu
 	p40.pyj: 2ms
 	p41.pyj: 737ms
 	p42.pyj: 7ms
+	p43.pyj: 7908ms
 
 # Testing
 To test that any of the above gives correct result and/or performs in the claimed time, use

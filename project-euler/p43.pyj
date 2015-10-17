@@ -1,0 +1,27 @@
+from p7 import primes
+
+# it will be faster to generate all 0-to-9 pandigitals out of digits
+def generateCombos(digits=[0 to 9]):
+    if not digits.length: return ['']
+    list = []
+    for d in range(digits.length):
+        if not d and digits.length == 10: continue # can't start with 0
+
+        clone = digits[:]
+        clone.splice(d, 1)
+        for combo in generateCombos(clone):
+            list.push(digits[d] + combo)
+    return list
+
+p = primes(20)
+def isPrimeSubdivisible(n):
+    primes = p[:]
+    for d in [1 to 7]:
+        if int(n[d:d+3]) % primes.shift():
+            return False
+    return True
+
+s = 0
+for number in generateCombos():
+    if isPrimeSubdivisible(number): s += int(number)
+print(s)
