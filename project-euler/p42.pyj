@@ -1,0 +1,20 @@
+fs = require('fs')
+data = fs.readFileSync('p042_words.txt', 'utf8')
+
+# words are stored with quotes and commas, so we'll need to process those
+words = data.split(',').map(def(a): return a[1:-1];).sort()
+
+# generate list of triangle numbers
+triangle = {n*(n+1)/2: True for n in range(30)}
+
+def isTriangleWord(word):
+    s = 0
+    for i in range(word.length):
+        s += word.charCodeAt(i) - 64
+    return triangle[s]
+
+count = 0
+for word in words:
+    if isTriangleWord(word): count += 1
+
+print(count)
