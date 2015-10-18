@@ -57,3 +57,20 @@ the following command:
 
 	rapydscript -x p[n].pyj
 
+# Optimizations
+For those interested, the optimization techniques I employ typically fall into the following categories:
+
+## Memoization
+When a function is called often with the same arguments (with the intent of producing the same result), it often makes sense to memoize it, especially if you're calling it thousands of times. Memoization is wrapping the function in another function, that dynamically forms a look-up table for previous results. This allows you to bypass the logic in the function during the next call altogether, using the value from the lookup table instead.
+
+## Converting Arrays to Hashes
+Similar to memoization, except that array already contains the set of results you want. The problem is that array is best suited for answering questions of type "What's the value at index N?", not "Does this value exist in array?". The first question can be answered in constant time, whereas the second in linear. This is typically not a problem when you need the answer rarely, but on Project Euler, you may be asking this questions thousands or millions of times. This is where hash comes in handy, with a mapping of `"value": True`, it can answer the second question in constant time.
+
+## Pruning
+When dealing with tree-like behavior (recursion with branching, etc.) you can save yourself a lot of time by pruning. Pruning is eliminating paths that you know won't contain the right answer before you go too deep into them. Just like an effective leader is one who can eliminate tasks that add no value from his schedule, an effective algorithm is one that can eliminate branches that add no value. Defining good lower/upper bounds for the problem based on the givens is a manual version of pruning.
+
+## Building Upon Smaller Cases
+Similar to memoization, but with an extra step. Not sure if there is a fancy term for this, but the concept involves taking a simple case, and computing more complex versions of it on the spot. For example, if we know that triangle with sides 3, 4, and 5 is a right triangle, we also know this to be the case for any triangle whose sides are multiples of those numbers. This seems simple, but it's a powerful concept. Many optimizations, including the Sieve of Eratosthenes and Euclid's approach to finding Triangular Triples, are based on it.
+
+## Heuristics
+I have yet to employ them on Project Euler, but the tile challenge in this same repository makes use of them. This is similar to using a map. You don't know if you'll find the shortest route, but choosing roads whose direction is towards the point of interest is more likely to get you there than ones that go in the opposite direction. What you're doing here is prioritizing "good" paths over "bad".

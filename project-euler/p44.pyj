@@ -1,0 +1,16 @@
+# FIXME: I got lucky with the limit here, any higher and program slows down considerably, but this is high
+# enough to find the right answer. Maybe a better approach would be to have a rolling limit with memoization
+# of lower values or simply track "dimensions" of the previously-tested area, an umbrella-memoization of sort.
+# It won't make this any faster but will give me the piece of mind that I didn't hardcode my limit
+limit = 10000
+P = [n*(3*n-1)/2 for n in [1 to limit]]
+isPentagonal = {n: True for n in P}
+
+done = False
+for j in [0 to limit]:
+    for k in [j+1 to limit]:
+        if isPentagonal[P[j]+P[k]] and isPentagonal[P[k]-P[j]]:
+            print(P[k]-P[j])
+            done = True
+            break
+    if done: break
