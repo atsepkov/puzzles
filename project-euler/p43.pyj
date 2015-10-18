@@ -1,6 +1,18 @@
 from p7 import primes
 
-# it will be faster to generate all 0-to-9 pandigitals out of digits
+# tweaked memoize function from problem 2
+# we're dealing with a recursive tree of digits, there will be a lot of overlap, so we can benefit from caching
+def memoize(f):
+    cache = {}
+    def wrapper(x):
+        if x: x.sort()
+        s = JSON.stringify(x)
+        if s not in cache:
+            cache[s] = f(x)
+        return cache[s]
+    return wrapper
+
+# it will be faster to generate all 0-to-9 pandigitals out of digits than iterate through all 10-digit numbers
 def generateCombos(digits=[0 to 9]):
     if not digits.length: return ['']
     list = []
@@ -9,9 +21,13 @@ def generateCombos(digits=[0 to 9]):
 
         clone = digits[:]
         clone.splice(d, 1)
-        for combo in generateCombos(clone):
+        for combo in g(clone):
             list.push(digits[d] + combo)
     return list
+
+# NOTE: the function is recursive, so we can't simply decorate it, since decoration will only apply to first
+# recursion level due to shadowing of decorated function with the local version inside of the function itself
+g = memoize(generateCombos)
 
 p = primes(20)
 def isPrimeSubdivisible(n):
