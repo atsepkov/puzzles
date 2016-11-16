@@ -1,4 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+
+# detect OS and adjust accordingly
+if [[ -z $OSTYPE ]]; then
+	# what are you running this on???
+	echo "OS couldn't be determined" 1>&2
+	exit 1
+elif [[ $OSTYPE == "darwin"* ]]; then
+	# assume these are already installed via brew's coreutils
+	ls='gls'
+else
+	# assume the more user-friendly date otherwise which supports human-readable --date field
+	ls='ls'
+fi
 
 compile_file() {
 	local content=`cat $1`
@@ -8,7 +22,7 @@ compile_file() {
 
 rm -f tmp.pyj
 if [[ -z $1 ]]; then
-	for file in `ls *.pyj | sort -n`; do
+	for file in `$ls -1v p*.pyj`; do
 		compile_file $file
 	done
 else

@@ -1,0 +1,33 @@
+# prefix expressions
+
+import sys
+import operator
+
+ops = {
+    "+": operator.add,
+    "/": operator.truediv,
+    "*": operator.mul,
+    "-": operator.sub
+}
+def build_tree(tokens):
+    """
+    Assumption: no broken patterns, i.e. "3 4 + + + +"
+    Logic:
+        always fill left child first, then right
+        if operator, recurse down one level
+        if both children nodes full, go back up
+    """
+    token = tokens.pop(0)
+    if token in ops.keys():
+        left, tokens = build_tree(tokens)
+        right, tokens = build_tree(tokens)
+        val = ops[token](left, right)
+    else:
+        val = int(token)
+    return val, tokens
+
+with open(sys.argv[1], 'r') as test_cases:
+    for test in test_cases:
+        if test:
+            val, _ = build_tree(test.split())
+            print int(val)
