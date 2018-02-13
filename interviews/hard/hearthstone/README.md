@@ -17,8 +17,10 @@ For simplicity of this question, let's assume the following (which deviates from
 
 - both players have access to their entire deck at all times and can play the cards in any order they wish
 - the boss does not attack or use any skills (so no healing is necessary)
+- once played, the card is discarded and can't be played again (unless another minion/spell returns the card to player's hand)
 - player can play as many cards as they wish per turn but the total cost per turn can never exceed 10 mana crystals
 - players alternate taking turns
 - "battlecry" effect is triggered when the card is played
 - "inspire" effect is triggered when player uses their hero power, hero power costs 2 mana and can only be used once per turn (assume hero power has no other effect)
 - "deathrattle" effect is triggered when a minion dies (ignore it since there is no attacking)
+- any random event can be assumed to produce the best possible result at the time it is played (i.e. copying a random spell can copy any spell that hasn't been played yet)
