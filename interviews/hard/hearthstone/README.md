@@ -2,7 +2,7 @@ Hearthstone
 ===========
 Hearthstone is a turn-based online card game between 2 opponents, using constructed decks of 30 cards and a hero with unique power. Players use their limited mana crystals to cast spells and summon minions to attack the opponent. There are 3 types of cards in Hearthstone, but we only need to consider 2 types:
 
-- minion (costs mana to play, stays in play until killed, has numeric damage and health)
+- minion (costs mana to play, stays in play until killed, has numeric attack and health)
 - spell (costs mana to play, disappears after use, targets one or more minions or a hero, has permanent effect unless removed)
 
 In 2018 a special event took place, called "Nefarian Rises", where instead of fighting each other the 2 players had to cooperate to take down a powerful boss together. The easiest way to take this boss down was by building a super-minion by having both players stack spells on top of the same minion until it becomes stronger than the boss.
