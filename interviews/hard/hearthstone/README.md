@@ -24,3 +24,6 @@ For simplicity of this question, let's assume the following (which deviates from
 - "inspire" effect is triggered when player uses their hero power, hero power costs 2 mana and can only be used once per turn (assume hero power has no other effect)
 - "deathrattle" effect is triggered when a minion dies (ignore it since there is no attacking)
 - any random event can be assumed to produce the best possible result at the time it is played (i.e. copying a random spell can copy any spell that hasn't been played yet)
+- your program only needs to account for the abilities of cards in these 2 decks, not any other Hearthstone cards
+
+**BONUS**: Change the program such that it takes any 2 30-card decks as input (that only use the cards mentioned in original decks, but in any other combination/quantity) and computes the highest possible attack value for them.
