@@ -11,6 +11,9 @@ There are a few things I want to test during the interview. In particular:
 Good starting points:
 - https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
 
+More interview questions:
+- https://github.com/MaximAbramchuck/awesome-interview-questions
+
 ## Questions to Ask
 These will work well for remote interviews too, you can use collabedit.com or something similar for code-along sessions. Questions in bold can make good programming questions too.
 
